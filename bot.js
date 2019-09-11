@@ -229,26 +229,26 @@ function play(guild, song) {
     serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
  
-const adminprefix = "$vip";
-const devs = ['274923685985386496'];
+const adminprefix = "!vip";
+const devs = ['436918120184021012'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
    
-if (message.content.startsWith(adminprefix + 'setgdame')) {
+if (message.content.startsWith(adminprefix + 'g')) {
   client.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else
-  if (message.content.startsWith(adminprefix + 'setname')) {
+  if (message.content.startsWith(adminprefix + 'n')) {
 client.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
 } else
-  if (message.content.startsWith(adminprefix + 'setavatar')) {
+  if (message.content.startsWith(adminprefix + 'a')) {
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else    
-if (message.content.startsWith(adminprefix + 'setT')) {
+if (message.content.startsWith(adminprefix + 't')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
@@ -257,7 +257,7 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 client.on("message", message => {
     if (message.content === `${prefix}help`) {
   const embed = new Discord.RichEmbed()
-      .setColor("#000000")
+      .setColor("RANDOM")
       .setDescription(`
 ${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
 ${prefix}skip ⇏ لتجآوز الأغنية الحآلية
